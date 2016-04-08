@@ -1,4 +1,3 @@
-from urllib2 import urlopen
 import requests
 from xml.etree import ElementTree
 
