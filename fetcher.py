@@ -1,5 +1,5 @@
 import requests
-from xml.etree import ElementTree
+from xml.etree import ElementTree as ET
 
 url = 'http://tidesandcurrents.noaa.gov/api/datagetter?' 
 begin_date = 'begin_date=20151101'
@@ -13,7 +13,7 @@ url += '&interval=h&units=english&time_zone=lst_ldt&application=EOMG&format=xml'
 
 response = requests.get(url)
 
-tideData = ElementTree.fromstring(response.content)
+tideData = ET.fromstring(response.content)
 
 for entry in tideData:
     print entry.tag, entry.attrib
